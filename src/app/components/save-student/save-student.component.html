@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="saveStudent()">
+<div class="container">
+  <h1>save student</h1>
+  <hr>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="form-group">
+        <input formControlName="name" type="text" placeholder="student name" class="form-control">
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="form-group">
+        <input formControlName="address" type="text" placeholder="student address" class="form-control">
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="form-group">
+        <input formControlName="salary" type="number" placeholder="student salary" class="form-control">
+      </div>
+    </div>
+    <div class="col-12" style="display:flex; justify-content: flex-end">
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid" >Save Student</button>
+    </div>
+  </div>
+</div>
+</form>

@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Find All Students</h1>
+  <hr>
+  <table class="table table-hover">
+     <thead>
+      <tr>
+       <th>#</th>
+       <th>Reference ID</th>
+       <th>Name</th>
+       <th>Address</th>
+       <th>Salary</th>
+      </tr>
+     </thead>
+    <tbody>
+     <tr *ngFor="let data of studentArray;index as num;">
+       <td>{{num+1}}</td>
+       <td>{{data.studentId}}</td>
+       <td>{{data.name}}</td>
+       <td>{{data.address}}</td>
+       <td>{{data.salary}}</td>
+     </tr>
+    </tbody>
+  </table>
+
+  <mat-paginator [length]= studentCount
+                 [pageSize]= size
+                 [pageIndex]=page
+                 [pageSizeOptions]= options
+                 (page) = "pageEvent = getServerData($event)"
+                 aria-label="Select page">
+  </mat-paginator>
+
+</div>
